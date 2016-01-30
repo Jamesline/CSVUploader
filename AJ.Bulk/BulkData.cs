@@ -12,7 +12,6 @@ namespace AJ.Bulk
 
         public bool WriteNames(DataTable dt)
         {
-
             DataTable tablem = ReadTable(_connectionString);
             tablem.Columns.Remove("ID");
             //tablem.Columns.RemoveAt(columnIndex);
