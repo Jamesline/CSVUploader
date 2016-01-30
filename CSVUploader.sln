@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVUploader", "CSVUploader\CSVUploader.csproj", "{BB88CD76-E1CF-4F6B-97F3-F582470B0FE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJ.Bulk", "AJ.Bulk\AJ.Bulk.csproj", "{1B62DF33-6461-435F-AE34-4C29ACF889B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB88CD76-E1CF-4F6B-97F3-F582470B0FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB88CD76-E1CF-4F6B-97F3-F582470B0FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB88CD76-E1CF-4F6B-97F3-F582470B0FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB88CD76-E1CF-4F6B-97F3-F582470B0FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B62DF33-6461-435F-AE34-4C29ACF889B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B62DF33-6461-435F-AE34-4C29ACF889B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B62DF33-6461-435F-AE34-4C29ACF889B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B62DF33-6461-435F-AE34-4C29ACF889B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
