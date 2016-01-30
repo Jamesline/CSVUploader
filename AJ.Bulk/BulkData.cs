@@ -10,31 +10,22 @@ namespace AJ.Bulk
     {
         private string _connectionString = @"Server=tcp:vp5rg59cow.database.windows.net,1433;Database=SoliTeam;User ID=LiverAdmin@vp5rg59cow;Password=Langley14;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        public bool WriteNames(DataTable dt)
+        public bool WriteNames(DataTable dt1)
         {
-            DataTable tablem = ReadTable(_connectionString);
-            tablem.Columns.Remove("ID");
-            //tablem.Columns.RemoveAt(columnIndex);
-            // Need to check first...
-            var match = DtMatch(dt, tablem);
-            bool status = false;
-            if (match != null)
+            try
             {
-                status = InsertBulkData(match);
+                var dt2 = ReadTable(_connectionString);
+                dt2.Columns.Remove("ID");
+                dt1.Merge(dt2);
+                var status = InsertBulkData(dt1);
+                return status;
             }
-
-           // var status = InsertBulkData(match);
-            return status;
+            catch (Exception)
+            {
+                //need error logging here
+                return false;
+            }
         }
-
-        private DataTable DtMatch(DataTable dt1, DataTable dt2)
-        {
-            dt1.Merge(dt2);
-            //System.Data.DataTable changesTable = dt1.GetChanges();
-
-            return dt1;
-        }
-
         public bool InsertBulkData(DataTable peopleTable)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -59,7 +50,7 @@ namespace AJ.Bulk
 
         private DataTable ReadTable(string sqlConn)
         {
-            using (SqlDataAdapter dataAdapter
+            using (var dataAdapter
                 = new SqlDataAdapter("SELECT * FROM Names", sqlConn))
             {
                 var table = new DataTable();
